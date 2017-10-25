@@ -7,6 +7,7 @@ Basic events emitter implementation
 [![devDependencies status](https://img.shields.io/david/dev/cjssdk/emitter.svg?style=flat-square)](https://david-dm.org/cjssdk/emitter?type=dev)
 [![Gitter](https://img.shields.io/badge/gitter-join%20chat-blue.svg?style=flat-square)](https://gitter.im/DarkPark/cjssdk)
 [![RunKit](https://img.shields.io/badge/RunKit-try-yellow.svg?style=flat-square)](https://runkit.com/npm/cjs-emitter)
+[![API](https://img.shields.io/badge/API-JSDoc-orange.svg?style=flat-square)](https://rfbkak37y3kiy.github.io/emitter/index.html)
 
 
 Typically, there are no strict restrictions on event names, as any string will be accepted.
