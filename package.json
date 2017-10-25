@@ -13,10 +13,13 @@
     "scripts": {
         "lint": "eslint .",
         "test": "npm run lint",
-        "jsdoc": "jsdoc --destination doc *.js readme.md"
+        "jsdoc": "jsdoc --configure ./jsdoc.json --destination docs/v1.0.0 *.js readme.md -t ./node_modules/docdash"
+
     },
     "devDependencies": {
         "cjs-eslint-config": "1.*.*",
+        "docdash": "ar2rsawseen/docdash",
+        "jsdoc": "3.*.*",
         "eslint": "4.*.*"
     },
     "keywords": [

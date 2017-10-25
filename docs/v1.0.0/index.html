@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>Home - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    
+    <input type="text" id="nav-search" placeholder="Search" />
+    
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Emitter.html">Emitter</a><ul class='methods'><li data-type='method' style='display: none;'><a href="Emitter.html#addListener">addListener</a></li><li data-type='method' style='display: none;'><a href="Emitter.html#once">once</a></li><li data-type='method' style='display: none;'><a href="Emitter.html#addListeners">addListeners</a></li><li data-type='method' style='display: none;'><a href="Emitter.html#removeListener">removeListener</a></li><li data-type='method' style='display: none;'><a href="Emitter.html#emit">emit</a></li></ul></li></ul>
+</nav>
+
+<div id="main">
+    
+
+    
+
+
+
+    
+
+
+
+
+
+
+
+
+
+    
+
+
+    <section class="readme">
+        <article><h1>Basic events emitter implementation</h1><p><a href="https://travis-ci.org/cjssdk/emitter"><img src="https://img.shields.io/travis/cjssdk/emitter.svg?style=flat-square" alt="build status"></a><br><a href="https://www.npmjs.com/package/cjs-emitter"><img src="https://img.shields.io/npm/v/cjs-emitter.svg?style=flat-square" alt="npm version"></a><br><a href="https://david-dm.org/cjssdk/emitter"><img src="https://img.shields.io/david/cjssdk/emitter.svg?style=flat-square" alt="dependencies status"></a><br><a href="https://david-dm.org/cjssdk/emitter?type=dev"><img src="https://img.shields.io/david/dev/cjssdk/emitter.svg?style=flat-square" alt="devDependencies status"></a><br><a href="https://gitter.im/DarkPark/cjssdk"><img src="https://img.shields.io/badge/gitter-join%20chat-blue.svg?style=flat-square" alt="Gitter"></a><br><a href="https://runkit.com/npm/cjs-emitter"><img src="https://img.shields.io/badge/RunKit-try-yellow.svg?style=flat-square" alt="RunKit"></a></p>
+<p>Typically, there are no strict restrictions on event names, as any string will be accepted.<br>Usually it's a lowercase string with no spaces. Possible values: <code>click</code>, <code>move</code>, <code>focus:item</code>.</p>
+<p>Functions can then be attached to objects, to be executed when an event is emitted.<br>These functions are called listeners. Inside a listener function, this refers to the <code>Emitter</code> that the listener was attached to.</p>
+<h2>Installation</h2><pre class="prettyprint source lang-bash"><code>npm install cjs-emitter</code></pre><h2>Usage</h2><p>Add the constructor to the scope:</p>
+<pre class="prettyprint source lang-js"><code>var Emitter = require('cjs-emitter');</code></pre><p>Create an instance:</p>
+<pre class="prettyprint source lang-js"><code>var emitter = new Emitter();</code></pre><p>Add listeners for some events:</p>
+<pre class="prettyprint source lang-js"><code>emitter.addListener('click', function ( data ) { /* ... */ });
+emitter.addListener('click', function ( data ) { /* ... */ });</code></pre><p>Add listener that will be notified only one time:</p>
+<pre class="prettyprint source lang-js"><code>emitter.once('click', function ( data ) { /* ... */ });</code></pre><p>Add multiple listeners at once:</p>
+<pre class="prettyprint source lang-js"><code>emitter.addListeners({
+    click: function ( data ) {},
+    close: function ( data ) {}
+});</code></pre><p>Remove all instances of the given callback:</p>
+<pre class="prettyprint source lang-js"><code>emitter.removeListener('click', func1);</code></pre><p>Remove all callbacks for the given event name:</p>
+<pre class="prettyprint source lang-js"><code>emitter.removeListener('click');</code></pre><p>Clears all events:</p>
+<pre class="prettyprint source lang-js"><code>emitter.removeListener();</code></pre><p>Execute each of the listeners in the given order with the supplied arguments:</p>
+<pre class="prettyprint source lang-js"><code>emitter.emit('init');
+emitter.emit('click', {src: panel1, dst: panel2});
+emitter.emit('load', error, data);</code></pre><h2>Performance notes</h2><p>It's a good idea to emit events only when there are some listeners:</p>
+<pre class="prettyprint source lang-js"><code>if ( emitter.events['click'] ) {
+    // notify listeners
+    emitter.emit('click', {event: event});
+}</code></pre><h2>Development mode</h2><blockquote>
+<p>There is a global var <code>DEVELOP</code> which activates additional consistency checks and protection logic not available in release mode.</p>
+</blockquote>
+<h2>Contribution</h2><p>If you have any problem or suggestion please open an issue <a href="https://github.com/cjssdk/emitter/issues">here</a>.<br>Pull requests are welcomed with respect to the <a href="https://github.com/DarkPark/jscs">JavaScript Code Style</a>.</p>
+<h2>License</h2><p><code>cjs-emitter</code> is released under the <a href="license.md">MIT License</a>.</p></article>
+    </section>
+
+
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+
+<script src="scripts/jquery-3.1.1.min.js"></script>
+
+<script src="scripts/search.js"></script>
+
+
+<script src="scripts/collapse.js"></script>
+
+
+
+</body>
+</html>
